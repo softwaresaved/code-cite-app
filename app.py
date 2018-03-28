@@ -11,7 +11,7 @@ app = Flask(__name__)
 class GetPapersQuery(FlaskForm):
     name = SelectField(
         'Select Query',
-        choices = [('github', 'github'),('zenodo', 'zenodo')],
+        choices = [('github', 'github')],
         validators=[DataRequired()])
 
 # Set the app secret key to prevent CSRF
