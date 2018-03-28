@@ -21,12 +21,20 @@ app.secret_key = os.urandom(24)
 @app.route('/', methods=['GET', 'POST'])
 def root():
     """
-    Root page of site
+    Allow user to select an option from github/zenodo
     """
     form = GetPapersQuery()
     if form.validate_on_submit():
-        return redirect('/success')
+        return redirect('success')
     return render_template('index.html', form=form)
+
+
+@app.route('/success', methods=['GET', 'POST'])
+def return_results():
+    """
+    Return results page
+    """
+    return render_template('results.html')
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
