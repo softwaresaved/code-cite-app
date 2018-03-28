@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.secret_key = os.urandom(24)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def root():
     """
     Root page of site
